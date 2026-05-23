@@ -1,0 +1,69 @@
+[project]
+name = "docvault-backend"
+version = "0.1.0"
+description = "DocVault — a production-minded RAG platform with semantic cache, automatic evaluation, and observability."
+readme = "../README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    # --- web ---
+    "fastapi>=0.115,<0.116",
+    "uvicorn[standard]>=0.32,<0.33",
+    "python-multipart>=0.0.17",
+    "pydantic>=2.9,<3",
+    "pydantic-settings>=2.6,<3",
+    # --- db / vector store ---
+    "sqlalchemy[asyncio]>=2.0.35,<2.1",
+    "asyncpg>=0.30,<0.31",
+    "pgvector>=0.3.6,<0.4",
+    "greenlet>=3.1",
+    # --- cache / rate limit ---
+    "redis>=5.2,<6",
+    "slowapi>=0.1.9,<0.2",
+    # --- LLM orchestration (LangChain) ---
+    "langchain-core>=0.3.20,<0.4",
+    "langchain-groq>=0.2.1,<0.3",
+    "langchain-text-splitters>=0.3.2,<0.4",
+    # --- embeddings (local) ---
+    "sentence-transformers>=3.3,<4",
+    "numpy>=1.26,<3",
+    # --- document parsing ---
+    "pypdf>=5.1,<6",
+    # --- observability / utils ---
+    "structlog>=24.4,<25",
+    "tenacity>=9.0,<10",
+    "httpx>=0.27,<0.29",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3,<9",
+    "pytest-asyncio>=0.24,<0.25",
+    "anyio>=4.6",
+    "ruff>=0.8,<0.9",
+    "aiosqlite>=0.20",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["app", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "C4", "SIM"]
+ignore = ["B008"]  # FastAPI uses function calls in arg defaults (Depends/File)
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["B011"]

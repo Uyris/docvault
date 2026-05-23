@@ -1,0 +1,90 @@
+{
+  "document": "sample_doc.md",
+  "description": "Gold Q&A over the Acme Robotics handbook excerpt. The last two items are intentionally unanswerable from the document — they test that the system declines instead of hallucinating.",
+  "items": [
+    {
+      "id": "q01",
+      "question": "When was Acme Robotics founded and where is it headquartered?",
+      "reference_answer": "Acme Robotics was founded in 2014 and is headquartered in Porto Alegre, Brazil.",
+      "answerable": true
+    },
+    {
+      "id": "q02",
+      "question": "How many days per week can employees work remotely?",
+      "reference_answer": "Up to three days per week.",
+      "answerable": true
+    },
+    {
+      "id": "q03",
+      "question": "What are the core working hours?",
+      "reference_answer": "Core hours run from 10:00 to 16:00 BRT.",
+      "answerable": true
+    },
+    {
+      "id": "q04",
+      "question": "How many vacation days do full-time employees get per year?",
+      "reference_answer": "30 days of paid vacation per year, accruing at 2.5 days per month.",
+      "answerable": true
+    },
+    {
+      "id": "q05",
+      "question": "What is the maximum vacation balance an employee can carry?",
+      "reference_answer": "The balance may not exceed 45 days at any time.",
+      "answerable": true
+    },
+    {
+      "id": "q06",
+      "question": "How much is the home-office stipend?",
+      "reference_answer": "A one-time stipend of R$2,000.",
+      "answerable": true
+    },
+    {
+      "id": "q07",
+      "question": "How often must passwords be rotated and how long must they be?",
+      "reference_answer": "Passwords must be rotated every 90 days and be at least 12 characters long.",
+      "answerable": true
+    },
+    {
+      "id": "q08",
+      "question": "Is multi-factor authentication required?",
+      "reference_answer": "Yes, MFA is mandatory on all company accounts.",
+      "answerable": true
+    },
+    {
+      "id": "q09",
+      "question": "What is the first-response SLA for a critical, production-down ticket?",
+      "reference_answer": "First response within 2 hours, available 24/7.",
+      "answerable": true
+    },
+    {
+      "id": "q10",
+      "question": "Within how long must a suspected security incident be reported?",
+      "reference_answer": "Within one hour of discovery.",
+      "answerable": true
+    },
+    {
+      "id": "q11",
+      "question": "What is the annual learning and development budget per employee?",
+      "reference_answer": "R$3,000 per year, and it does not carry over.",
+      "answerable": true
+    },
+    {
+      "id": "q12",
+      "question": "How much notice is required for a vacation request?",
+      "reference_answer": "At least two weeks in advance.",
+      "answerable": true
+    },
+    {
+      "id": "q13",
+      "question": "What is Acme Robotics' annual revenue?",
+      "reference_answer": "The document does not state the company's revenue.",
+      "answerable": false
+    },
+    {
+      "id": "q14",
+      "question": "What is the company's parental leave policy?",
+      "reference_answer": "The document does not mention a parental leave policy.",
+      "answerable": false
+    }
+  ]
+}

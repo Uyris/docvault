@@ -1,0 +1,16 @@
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+.mypy_cache
+tests
+uploads
+data
+*.log
+eval_report.json
+.env
+.env.*
+!.env.example
+Dockerfile
+.dockerignore
